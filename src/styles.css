@@ -43,3 +43,13 @@ tbody tr:nth-child(even) {
   transform: translate(0);
   opacity: 0;
 }
+
+.remove {
+  animation: flashremove 2000ms;
+}
+
+@keyframes flashremove {
+  50% {
+    background-color: red;
+  }
+}

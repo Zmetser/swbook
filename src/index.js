@@ -143,11 +143,13 @@ let tableRows55 = tBody.querySelectorAll("tr");
 
 for (let j = 0; j < deleteButtons.length; j++) {
   deleteButtons[j].addEventListener("click", () => {
-    tableRows55[j].style.backgroundColor = "red";
+    tableRows55[j].addEventListener("animationend", () => {
+      removeThis();
+    });
+
+    tableRows55[j].classList.add("remove");
     function removeThis() {
       tableRows55[j].remove();
     }
-
-    setTimeout(removeThis, 1000);
   });
 }
