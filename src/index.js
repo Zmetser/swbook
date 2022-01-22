@@ -69,3 +69,11 @@ const modalOpen = document.querySelector("#modalOpen");
 modalOpen.addEventListener("click", () => {
   modalDivElement.classList.add("open");
 });
+
+const form = document.getElementById("swform");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log(form.name.value);
+  console.log(form.height.value);
+  console.log(form.mass.value);
+});
