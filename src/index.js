@@ -53,6 +53,12 @@ tBody.addEventListener("click", function (event) {
   const index = Number(row.dataset.index); // row.getAttribute('data-index')
   const character = window.swbook[index];
   console.log(character);
+
+  openModal();
+
+  Object.keys(character).forEach((key) => {
+    form[key].value = character[key];
+  });
 });
 
 let modalCloseElement = document.querySelector(".modalClose");
@@ -70,9 +76,10 @@ modalCloseElement.addEventListener("click", closeModal);
 
 const modalOpen = document.querySelector("#modalOpen");
 
-modalOpen.addEventListener("click", () => {
+const openModal = function () {
   modalDivElement.classList.add("open");
-});
+};
+modalOpen.addEventListener("click", openModal);
 
 const form = document.getElementById("swform");
 form.addEventListener("submit", (event) => {
