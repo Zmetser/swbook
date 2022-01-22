@@ -1,3 +1,4 @@
+console.log(window.swbook);
 // js-t ide
 const tBody = document.querySelector("#tBody");
 
@@ -32,7 +33,7 @@ function renderTable(database) {
 function renderTableAsStringLiteral(database) {
   for (let i = 0; i < database.length; ++i) {
     tBody.innerHTML += `
-      <tr>
+      <tr data-index="${i}">
         <td> ${database[i].name} </td>
         <td> <strong> ${database[i].gender} </strong></td>
       </tr>
@@ -44,9 +45,27 @@ function renderTableAsStringLiteral(database) {
 renderTableAsStringLiteral(window.swbook);
 
 tBody.addEventListener("click", function (event) {
-  let current = event.target.parentElement;
-  while (current.nodeName !== "TR") {
-    current = current.parentElement;
+  let row = event.target;
+  while (row.nodeName !== "TR") {
+    row = row.parentElement;
   }
-  console.log(current);
+  const index = Number(row.dataset.index); // row.getAttribute('data-index')
+  const character = window.swbook[index];
+  console.log(character);
+});
+
+let modalCloseElement = document.querySelector(".modalClose");
+let modalDivElement = document.querySelector(".modal-background");
+modalCloseElement.addEventListener("click", function (event) {
+  modalDivElement.classList.remove("open");
+  modalDivElement.classList.add("closing");
+  modalDivElement.addEventListener("transitionend", () => {
+    modalDivElement.classList.remove("closing");
+  });
+});
+
+const modalOpen = document.querySelector("#modalOpen");
+
+modalOpen.addEventListener("click", () => {
+  modalDivElement.classList.add("open");
 });

@@ -9,7 +9,7 @@
   <body>
     <h1>Ide dolgozunk</h1>
     <div>
-      <a href="#">Add new character </a>
+      <a href="#" id="modalOpen">Add new character</a>
     </div>
     <table>
       <thead>
@@ -20,7 +20,11 @@
       </thead>
       <tbody id="tBody"></tbody>
     </table>
-    <div></div>
+    <div class="modal-background">
+      <div class="modal">
+        <div class="fejlec"><button class="modalClose">x</button></div>
+      </div>
+    </div>
 
     <script src="src/data.js"></script>
     <script src="src/index.js"></script>
