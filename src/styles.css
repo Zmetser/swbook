@@ -23,7 +23,7 @@ tbody tr:nth-child(even) {
   transition: 0.25s opacity ease-in-out;
 }
 .modal {
-  width: 300px;
+  width: 600px;
   height: 500px;
   z-index: 20;
   background-color: white;

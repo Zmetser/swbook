@@ -23,6 +23,56 @@
     <div class="modal-background">
       <div class="modal">
         <div class="fejlec"><button class="modalClose">x</button></div>
+        <form action="" id="swform">
+          <div class="modal_body">
+            <label for="name">Name</label><br />
+            <input type="text" id="name" style="width: 500px;" /><br /><br />
+            <div class="heightandmass" style="display: flex;">
+              <div class="height1">
+                <label for="height">Height</label><br />
+                <input type="text" id="height" />
+              </div>
+              <div class="mass1" style="margin-left: 100px;">
+                <label for="mass">Mass</label><br />
+                <input type="text" id="mass" />
+              </div>
+            </div>
+            <br />
+            <div class="hairskineye" style="display: flex;">
+              <div class="hair1">
+                <label for="hair">Hair color</label><br />
+                <input type="text" id="hair" />
+              </div>
+              <div class="skin">
+                <label for="hair">Skin color</label><br />
+                <input type="text" id="skin" />
+              </div>
+              <div class="eye">
+                <label for="eye">Eye color</label><br />
+                <input type="text" id="eye" />
+              </div>
+            </div>
+            <br />
+            <div class="birthyear">
+              <label for="birthyear">Birth year</label><br />
+              <input type="text" id="birthyear" style="width: 500px;" />
+            </div>
+            <br />
+            <div class="Gender">
+              <label for="gender">Gender</label><br />
+              <select name="gender" id="gender" style="width: 500px;">
+                <option value="n/a">N/A</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="hermaphrodite">hermaphrodite</option>
+              </select>
+            </div>
+          </div>
+          <br />
+          <button type="submit" style="background-color: blue; color: white;">
+            SAVE
+          </button>
+        </form>
       </div>
     </div>
 
