@@ -56,13 +56,16 @@ tBody.addEventListener("click", function (event) {
 
 let modalCloseElement = document.querySelector(".modalClose");
 let modalDivElement = document.querySelector(".modal-background");
-modalCloseElement.addEventListener("click", function (event) {
+
+const closeModal = function (event) {
   modalDivElement.classList.remove("open");
   modalDivElement.classList.add("closing");
   modalDivElement.addEventListener("transitionend", () => {
     modalDivElement.classList.remove("closing");
   });
-});
+};
+
+modalCloseElement.addEventListener("click", closeModal);
 
 const modalOpen = document.querySelector("#modalOpen");
 
@@ -119,4 +122,17 @@ form.addEventListener("submit", (event) => {
   // obj.skin_color = form.elements.skin_color.value
 
   console.log(obj);
+  newObj(obj);
+  closeModal();
 });
+
+const newObj = function (obj) {
+  const newName = obj.name;
+  const newGender = obj.gender;
+
+  tBody.innerHTML += `
+  <tr>
+  <td>${newName}</td>
+  <td><strong>${newGender}</strong></td>
+  </tr>`;
+};
