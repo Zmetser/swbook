@@ -36,6 +36,7 @@ function renderTableAsStringLiteral(database) {
       <tr data-index="${i}">
         <td> ${database[i].name} </td>
         <td> <strong> ${database[i].gender} </strong></td>
+        <td> <button class="deleteButton"> Delete </button> </td>
       </tr>
     `;
   }
@@ -136,3 +137,17 @@ const newObj = function (obj) {
   <td><strong>${newGender}</strong></td>
   </tr>`;
 };
+
+let deleteButtons = document.querySelectorAll(".deleteButton");
+let tableRows55 = tBody.querySelectorAll("tr");
+
+for (let j = 0; j < deleteButtons.length; j++) {
+  deleteButtons[j].addEventListener("click", () => {
+    tableRows55[j].style.backgroundColor = "red";
+    function removeThis() {
+      tableRows55[j].remove();
+    }
+
+    setTimeout(removeThis, 1000);
+  });
+}
