@@ -76,4 +76,27 @@ form.addEventListener("submit", (event) => {
   console.log(form.name.value);
   console.log(form.height.value);
   console.log(form.mass.value);
+
+  const obj = {};
+
+  for (let i = 0; i < form.elements.length; i++) {
+    const value = form.elements[i].value; // Luke Skywalker, blond, 55
+    const name = form.elements[i].name; // hair_color, mass
+
+    obj[name] = value;
+  }
+
+  //
+  // Ezt helyettesiti a ciklus
+  //
+  // obj.birth_year = form.elements.birth_year.value
+  // obj.eye_color = form.elements.eye_color.value
+  // obj.gender = form.elements.gender.value
+  // obj.hair_color = form.elements.hair_color.value
+  // obj.height = form.elements.height.value
+  // obj.mass = form.elements.mass.value
+  // obj.name = form.elements.name.value
+  // obj.skin_color = form.elements.skin_color.value
+
+  console.log(obj);
 });
