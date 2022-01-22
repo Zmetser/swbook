@@ -79,12 +79,32 @@ form.addEventListener("submit", (event) => {
 
   const obj = {};
 
-  for (let i = 0; i < form.elements.length; i++) {
-    const value = form.elements[i].value; // Luke Skywalker, blond, 55
-    const name = form.elements[i].name; // hair_color, mass
+  //for (let i = 0; i < form.elements.length; i++) {
+  //const value = form.elements[i].value; // Luke Skywalker, blond, 55
+  //const name = form.elements[i].name; // hair_color, mass
 
-    obj[name] = value;
-  }
+  //obj[name] = value;
+  //}
+
+  // Tombbe alakitas
+  // nemtomb {0: ertek0, 1: ertek1, ...}
+  // Array.from(nemtomb), [...nemtom]
+  // Object.keys(nemtomb) [0,1,2,3...]
+  // Object.values(nemtomb) [ertek0, ertek1...]
+  // Object.entries(nemtomb) [[0, ertek0], [1, ertek1]]
+
+  Array.from(form.elements).forEach((input) => {
+    // if (value != "")
+    const value = input.value;
+    const name = input.name;
+    if (value !== "") {
+      obj[name] = value;
+    }
+  });
+
+  window.swbook.push(obj);
+
+  // document.forms[0].elements.toArray()
 
   //
   // Ezt helyettesiti a ciklus
